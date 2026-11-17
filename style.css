@@ -1,0 +1,187 @@
+:root {
+    /* Couleurs officielles demandées */
+    --bleu: #1941B8;
+    --rouge: #FF135A;
+    --vert: #1C8275;
+
+    /* Couleurs complémentaires */
+    --fond: #F3F6FB;
+    --blanc: #FFFFFF;
+    --texte: #1E293B;
+    --texte-secondaire: #64748B;
+    --bordure: #E2E8F0;
+
+    /* Présentation */
+    --rayon: 12px;
+    --ombre: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Réinitialisation des dimensions */
+* {
+    box-sizing: border-box;
+}
+
+/* Corps de la page */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fond);
+    color: var(--texte);
+    line-height: 1.6;
+}
+
+/* Titres */
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+/* Contenu principal */
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+
+header {
+    background-color: var(--bleu);
+    color: white;
+    padding: 25px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+section {
+    background-color: var(--blanc);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: var(--rayon);
+    box-shadow: var(--ombre);
+}
+
+section h2 {
+    color: var(--bleu);
+    margin-top: 0;
+}
+
+/* Formulaire de recherche */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: 2px solid var(--vert);
+    border-color: var(--vert);
+}
+
+button {
+    padding: 12px 20px;
+    background-color: var(--bleu);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--vert);
+}
+
+
+/* Conteneur des cartes */
+.liste-etudiants {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Chaque carte étudiant */
+.liste-etudiants article {
+    background-color: var(--blanc);
+    border: 1px solid var(--bordure);
+    border-radius: var(--rayon);
+    padding: 20px;
+    box-shadow: var(--ombre);
+    transition: transform 0.2s ease;
+}
+
+.liste-etudiants article:hover {
+    transform: translateY(-4px);
+}
+
+.liste-etudiants article h3 {
+    color: var(--bleu);
+    margin-top: 0;
+}
+
+
+/* TABLETTE : à partir de 640 pixels */
+@media screen and (min-width: 640px) {
+
+    .liste-etudiants {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* ORDINATEUR : à partir de 1024 pixels */
+@media screen and (min-width: 1024px) {
+
+    .liste-etudiants {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+footer {
+    background-color: var(--bleu);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+}
