@@ -1,187 +1,127 @@
 :root {
-    /* Couleurs officielles demandées */
-    --bleu: #1941B8;
-    --rouge: #FF135A;
-    --vert: #1C8275;
-
-    /* Couleurs complémentaires */
-    --fond: #F3F6FB;
-    --blanc: #FFFFFF;
-    --texte: #1E293B;
-    --texte-secondaire: #64748B;
-    --bordure: #E2E8F0;
-
-    /* Présentation */
-    --rayon: 12px;
-    --ombre: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --bleu: #1941B3;
+  --rouge: #FF135A;
+  --vert: #1C8275;
+  --texte: #1a1a1a;
+  --fond: #f5f7fb;
 }
 
-
-/* Réinitialisation des dimensions */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-/* Corps de la page */
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--fond);
-    color: var(--texte);
-    line-height: 1.6;
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  color: var(--texte);
+  background: var(--fond);
+  line-height: 1.5;
 }
-
-/* Titres */
-h1, h2, h3 {
-    line-height: 1.2;
-}
-
-/* Contenu principal */
-main {
-    width: 90%;
-    max-width: 1100px;
-    margin: 30px auto;
-}
-
 
 header {
-    background-color: var(--bleu);
-    color: white;
-    padding: 25px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
+  background: var(--bleu);
+  color: #fff;
+  padding: 1rem;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 28px;
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
 }
 
 nav {
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+  color: #fff;
 }
 
-nav a:hover {
-    text-decoration: underline;
+main {
+  padding: 1rem;
 }
 
-section {
-    background-color: var(--blanc);
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: var(--rayon);
-    box-shadow: var(--ombre);
+h2 {
+  color: var(--bleu);
+  border-bottom: 3px solid var(--rouge);
+  padding-bottom: 0.25rem;
 }
 
-section h2 {
-    color: var(--bleu);
-    margin-top: 0;
-}
-
-/* Formulaire de recherche */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-label {
-    font-weight: bold;
-}
-
-input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--couleur-bordure);
-    border-radius: 8px;
-    font-size: 16px;
-}
-
-input:focus {
-    outline: 2px solid var(--vert);
-    border-color: var(--vert);
+input,
+button {
+  font: inherit;
+  padding: 0.6rem;
+  max-width: 100%;
 }
 
 button {
-    padding: 12px 20px;
-    background-color: var(--bleu);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+  background: var(--vert);
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-button:hover {
-    background-color: var(--vert);
+/* Focus visible sur tous les éléments interactifs */
+a:focus-visible,
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--rouge);
+  outline-offset: 2px;
 }
 
-
-/* Conteneur des cartes */
-.liste-etudiants {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+/* Mobile d'abord : 1 colonne par défaut */
+.grille {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
 
-/* Chaque carte étudiant */
-.liste-etudiants article {
-    background-color: var(--blanc);
-    border: 1px solid var(--bordure);
-    border-radius: var(--rayon);
-    padding: 20px;
-    box-shadow: var(--ombre);
-    transition: transform 0.2s ease;
+article {
+  background: #fff;
+  border-left: 5px solid var(--vert);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-wrap: anywhere;
 }
 
-.liste-etudiants article:hover {
-    transform: translateY(-4px);
+article h3 {
+  margin: 0 0 0.25rem;
 }
 
-.liste-etudiants article h3 {
-    color: var(--bleu);
-    margin-top: 0;
+article p {
+  margin: 0.2rem 0;
 }
-
-
-/* TABLETTE : à partir de 640 pixels */
-@media screen and (min-width: 640px) {
-
-    .liste-etudiants {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-/* ORDINATEUR : à partir de 1024 pixels */
-@media screen and (min-width: 1024px) {
-
-    .liste-etudiants {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-}
-
 
 footer {
-    background-color: var(--bleu);
-    color: white;
-    text-align: center;
-    padding: 20px;
+  background: var(--bleu);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
 }
 
-footer p {
-    margin: 0;
+/* 2 colonnes à partir de 640 px */
+@media (min-width: 640px) {
+  .grille {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  form {
+    flex-direction: row;
+    align-items: end;
+  }
+}
+
+/* 3 colonnes à partir de 1024 px */
+@media (min-width: 1024px) {
+  .grille {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
