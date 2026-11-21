@@ -1,3 +1,7 @@
+/**import { simulerFetch } from "../outils/simulerFetch.js";
+globalThis.fetch = simulerFetch; **/ //pour simuler sans internet
+
+import { chargerUtilisateurs, chargerUtilisateur } from "./charger.js";
 import {readFile} from "node:fs/promises";
 
 import {
@@ -68,3 +72,8 @@ console.log(
     "Nouvelle note :",
     nouvelEtudiant.note
 );
+
+console.log("\n=== PARTIE E ===");
+console.log("1) Succès :", await chargerUtilisateurs(3));
+console.log("2) Inexistant :", await chargerUtilisateur(99999));
+console.log("3) Erreur réseau :", await chargerUtilisateurs(3, "https://hote-invalide.exemple"));
