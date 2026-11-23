@@ -1,5 +1,5 @@
-/**import { simulerFetch } from "../outils/simulerFetch.js";
-globalThis.fetch = simulerFetch; **/ //pour simuler sans internet
+import { simulerFetch } from "../outils/simulerFetch.js";
+globalThis.fetch = simulerFetch; // Simulation locale, sans connexion Internet
 
 import { chargerUtilisateurs, chargerUtilisateur } from "./charger.js";
 import {readFile} from "node:fs/promises";
