@@ -20,46 +20,16 @@
     <section id="recherche">
       <h2>Recherche</h2>
       <form>
-        <label for="champ-recherche">Nom ou prénom</label>
-        <input type="search" id="champ-recherche" name="q">
+        <label for="champ-recherche">Nom, prénom ou filière</label>
+        <input type="search" id="champ-recherche" name="q" placeholder="Ex. Ngo, Aïcha, Réseaux" autocomplete="off">
         <button type="submit">Rechercher</button>
       </form>
     </section>
 
     <section id="etudiants">
       <h2>Étudiants</h2>
-      <div class="grille">
-        <article>
-          <h3>Aïcha Ngo</h3>
-          <p>Informatique</p>
-          <p>Note : 14</p>
-        </article>
-        <article>
-          <h3>Paul Tchinda</h3>
-          <p>Réseaux</p>
-          <p>Note : 9</p>
-        </article>
-        <article>
-          <h3>Marie Fotso</h3>
-          <p>Génie logiciel</p>
-          <p>Note : 16</p>
-        </article>
-        <article>
-          <h3>Christelle Nkou</h3>
-          <p>Informatique</p>
-          <p>Note : 11.5</p>
-        </article>
-        <article>
-          <h3>Brice Essomba</h3>
-          <p>Réseaux</p>
-          <p>Note : 7.5</p>
-        </article>
-        <article>
-          <h3>Linda Mvondo</h3>
-          <p>Génie logiciel</p>
-          <p>Note : 13</p>
-        </article>
-      </div>
+      <p id="resultat-recherche" role="status" aria-live="polite"></p>
+      <div class="grille" id="liste-etudiants"></div>
     </section>
 
     <section id="contact">
@@ -71,5 +41,6 @@
   <footer>
     <p>&copy; 2026 ISTILE : Mini-TP Modules 1 et 2</p>
   </footer>
+  <script type="module" src="src/recherche.js"></script>
 </body>
 </html>
