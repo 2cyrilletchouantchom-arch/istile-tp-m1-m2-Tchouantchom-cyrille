@@ -1,4 +1,4 @@
-export async function chargerUtisateurs(
+export async function chargerUtilisateurs(
     limite =5,
     base = "https://dummyjson.com"
 ) {
@@ -31,7 +31,7 @@ email }) => ({
 
 
 
-export async function ChargerUtilisateur( 
+export async function chargerUtilisateur( 
     id,
     base = "https://dummyjson.com"      
 ) {
@@ -39,7 +39,7 @@ export async function ChargerUtilisateur(
         const response = await fetch(
 `${base}/users/${id}`);
 
-        if (!response.status === 404) {
+        if (response.status === 404) {
             console.error(`Utilisateur ${id}
 introuvable (404)`);
             return null;
